@@ -18,3 +18,9 @@ To retrieve the original URL, you need to call the `get_long_url` function with 
 
 - FastAPI: A modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.
 - SQLAlchemy: The Python SQL Toolkit and Object-Relational Mapper that gives application developers the full power and flexibility of SQL.
+
+## TO-DOS:
+- Unit tests
+- Authorization (roles)
+- Caching
+- Dockerize
