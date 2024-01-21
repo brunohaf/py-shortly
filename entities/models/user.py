@@ -1,4 +1,4 @@
-from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
+from sqlalchemy import Column, Integer
 from sqlalchemy.orm import relationship
 from datetime import datetime
 from typing import Optional
@@ -7,6 +7,7 @@ from pydantic import Field, BaseModel
 
 from config.database import Base
 
+# TO-DO: Add is_active column
 class User(Base):
     
     __tablename__ = "Users"
@@ -14,6 +15,7 @@ class User(Base):
     id: int = Column(Integer, primary_key=True)
     username: str = Column(default=None, nullable=False)
     hashed_password: str = Column(default=None, nullable=False)
+    # is_active: bool = Column(default=True)
     created_at: Optional[datetime] = Column(
         default=None, server_default= func.now())
     updated_at: Optional[datetime] = Column(
@@ -41,6 +43,7 @@ class UserRequest(BaseModel):
 #     id INT AUTO_INCREMENT PRIMARY KEY,
 #     username VARCHAR(255) NOT NULL,
 #     hashed_password VARCHAR(255) NOT NULL,
+#     is_active BOOLEAN DEFAULT True,
 #     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
 #     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
 # )
