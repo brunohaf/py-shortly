@@ -24,3 +24,4 @@ To retrieve the original URL, you need to call the `get_long_url` function with 
 - Authorization (roles)
 - Caching
 - Dockerize
+- Workflow
