@@ -5,7 +5,7 @@ from typing import Optional
 from sqlalchemy.sql import func
 from pydantic import BaseModel, Field
 
-from config.database import Base
+from configs.database import Base
 
 
 class Url(Base):

@@ -5,7 +5,7 @@ from typing import Optional
 from sqlalchemy.sql import func
 from pydantic import Field, BaseModel
 
-from config.database import Base
+from configs.database import Base
 
 # TO-DO: Add is_active column
 class User(Base):

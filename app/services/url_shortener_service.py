@@ -1,9 +1,9 @@
 from fastapi import Depends, Header, HTTPException
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import IntegrityError
-from config.database import get_session
-from entities.models.url import UrlRequest, Url
-from entities.models.user import User
+from configs.database import get_session
+from models.url import UrlRequest, Url
+from models.user import User
 from services import auth_service
 from typing import List
 
