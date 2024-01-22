@@ -10,7 +10,7 @@ from typing import List
 
 def get_long_url(url_id: str, session: Session = Depends(get_session)) -> Url:
     
-    long_url = session.query(Url).filter(Url.id == url_id).first()
+    long_url = session.query(Url).filter_by(id=url_id).first()
 
     if long_url is None:
         raise HTTPException(409, detail="Could not get redirect URL")
@@ -41,7 +41,7 @@ def get_url_id(user_id: str) -> str:
 def get_user_urls(user: User = Depends(auth_service.get_current_active_user),
                   session: Session = Depends(get_session)) -> List[str]:
     
-    urls = session.query(Url).filter(Url.owner_id == user.id).all()
+    urls = session.query(Url).filter_by(owner_id=user.id).all()
     return [build_url_for_id(url.id) for url in urls]
 
 def build_url_for_id(url_id: str) -> str:
