@@ -1,6 +1,6 @@
 from fastapi import Depends, Query, HTTPException
-from entities.models.user import UserRequest, User
-from config.database import get_session
+from models.user import UserRequest, User
+from configs.database import get_session
 from services import password_hash_service as pass_service
 from sqlalchemy.orm import Session
 

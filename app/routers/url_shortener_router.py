@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, status
 from fastapi.responses import RedirectResponse, Response
-from entities.models.url import UrlRequest
+from models.url import UrlRequest
 from services import url_shortener_service
 from typing import List
 

@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends, status
-from entities.models.user import UserRequest
+from models.user import UserRequest
 from services import user_service
 
 router = APIRouter(

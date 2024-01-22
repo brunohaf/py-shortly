@@ -3,8 +3,8 @@ from datetime import datetime, timedelta, timezone
 from fastapi import Depends, HTTPException, status, Header
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from jose import JWTError, jwt
-from entities.models.user import User
-from entities.models.jwt_token import Token, TokenData
+from models.user import User
+from models.jwt_token import Token, TokenData
 from services import user_service, password_hash_service as pass_service
 
 #TO-DO: Take these values from environment variables or config and Add alg and aud allowed lists.
